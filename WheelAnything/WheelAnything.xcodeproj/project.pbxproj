@@ -6,6 +6,10 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0644BF3B30913A4B00983B98 /* WheelCore in Frameworks */ = {isa = PBXBuildFile; productRef = 0644BF3A30913A4B00983B98 /* WheelCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0644BF1F3091318A00983B98 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -51,6 +55,7 @@
 		0644BF0E3091318900983B98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				0644BF3B30913A4B00983B98 /* WheelCore in Frameworks */,
 			);
 		};
 		0644BF1B3091318A00983B98 /* Frameworks */ = {
@@ -103,6 +108,9 @@
 				0644BF133091318900983B98 /* WheelAnything */,
 			);
 			name = WheelAnything;
+			packageProductDependencies = (
+				0644BF3A30913A4B00983B98 /* WheelCore */,
+			);
 			productName = WheelAnything;
 			productReference = 0644BF113091318900983B98 /* WheelAnything.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +189,9 @@
 			);
 			mainGroup = 0644BF083091318900983B98;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0644BF3930913A4B00983B98 /* XCLocalSwiftPackageReference "../WheelCore" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0644BF123091318900983B98 /* Products */;
 			projectDirPath = "";
@@ -531,6 +542,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		0644BF3930913A4B00983B98 /* XCLocalSwiftPackageReference "../WheelCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../WheelCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0644BF3A30913A4B00983B98 /* WheelCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WheelCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0644BF093091318900983B98 /* Project object */;
 	validationLevel = 1;

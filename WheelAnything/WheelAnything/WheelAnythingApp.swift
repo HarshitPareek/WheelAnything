@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WheelCore
 
 @main
 struct WheelAnythingApp: App {
