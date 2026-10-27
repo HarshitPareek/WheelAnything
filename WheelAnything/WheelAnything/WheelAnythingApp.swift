@@ -10,6 +10,16 @@ import WheelCore
 
 @main
 struct WheelAnythingApp: App {
+    #if DEBUG
+    // Stage 0 feasibility spikes (Spikes/). Debug builds only; replaced by the real
+    // app shell in Stage 1.
+    @NSApplicationDelegateAdaptor(SpikeAppDelegate.self) private var spikeDelegate
+
+    init() {
+        SpikeRunner.runHeadlessSpikeIfRequested()
+    }
+    #endif
+
     var body: some Scene {
         WindowGroup {
             ContentView()
