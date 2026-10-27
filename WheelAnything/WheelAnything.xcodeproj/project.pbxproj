@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		0644BF1F3091318A00983B98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0644BF093091318900983B98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0644BF103091318900983B98;
+			remoteInfo = WheelAnything;
+		};
+		0644BF293091318A00983B98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0644BF093091318900983B98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0644BF103091318900983B98;
+			remoteInfo = WheelAnything;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0644BF113091318900983B98 /* WheelAnything.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WheelAnything.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0644BF1E3091318A00983B98 /* WheelAnythingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelAnythingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0644BF283091318A00983B98 /* WheelAnythingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WheelAnythingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0644BF133091318900983B98 /* WheelAnything */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WheelAnything;
+			sourceTree = "<group>";
+		};
+		0644BF213091318A00983B98 /* WheelAnythingTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WheelAnythingTests;
+			sourceTree = "<group>";
+		};
+		0644BF2B3091318A00983B98 /* WheelAnythingUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WheelAnythingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0644BF0E3091318900983B98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		0644BF1B3091318A00983B98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		0644BF253091318A00983B98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0644BF083091318900983B98 = {
+			isa = PBXGroup;
+			children = (
+				0644BF133091318900983B98 /* WheelAnything */,
+				0644BF213091318A00983B98 /* WheelAnythingTests */,
+				0644BF2B3091318A00983B98 /* WheelAnythingUITests */,
+				0644BF123091318900983B98 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0644BF123091318900983B98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0644BF113091318900983B98 /* WheelAnything.app */,
+				0644BF1E3091318A00983B98 /* WheelAnythingTests.xctest */,
+				0644BF283091318A00983B98 /* WheelAnythingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0644BF103091318900983B98 /* WheelAnything */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0644BF303091318A00983B98 /* Build configuration list for PBXNativeTarget "WheelAnything" */;
+			buildPhases = (
+				0644BF0D3091318900983B98 /* Sources */,
+				0644BF0E3091318900983B98 /* Frameworks */,
+				0644BF0F3091318900983B98 /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				0644BF133091318900983B98 /* WheelAnything */,
+			);
+			name = WheelAnything;
+			productName = WheelAnything;
+			productReference = 0644BF113091318900983B98 /* WheelAnything.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0644BF1D3091318A00983B98 /* WheelAnythingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0644BF333091318A00983B98 /* Build configuration list for PBXNativeTarget "WheelAnythingTests" */;
+			buildPhases = (
+				0644BF1A3091318A00983B98 /* Sources */,
+				0644BF1B3091318A00983B98 /* Frameworks */,
+				0644BF1C3091318A00983B98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0644BF203091318A00983B98 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0644BF213091318A00983B98 /* WheelAnythingTests */,
+			);
+			name = WheelAnythingTests;
+			productName = WheelAnythingTests;
+			productReference = 0644BF1E3091318A00983B98 /* WheelAnythingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0644BF273091318A00983B98 /* WheelAnythingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0644BF363091318A00983B98 /* Build configuration list for PBXNativeTarget "WheelAnythingUITests" */;
+			buildPhases = (
+				0644BF243091318A00983B98 /* Sources */,
+				0644BF253091318A00983B98 /* Frameworks */,
+				0644BF263091318A00983B98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0644BF2A3091318A00983B98 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0644BF2B3091318A00983B98 /* WheelAnythingUITests */,
+			);
+			name = WheelAnythingUITests;
+			productName = WheelAnythingUITests;
+			productReference = 0644BF283091318A00983B98 /* WheelAnythingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0644BF093091318900983B98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2710;
+				LastUpgradeCheck = 2710;
+				TargetAttributes = {
+					0644BF103091318900983B98 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					0644BF1D3091318A00983B98 = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = 0644BF103091318900983B98;
+					};
+					0644BF273091318A00983B98 = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = 0644BF103091318900983B98;
+					};
+				};
+			};
+			buildConfigurationList = 0644BF0C3091318900983B98 /* Build configuration list for PBXProject "WheelAnything" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0644BF083091318900983B98;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0644BF123091318900983B98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0644BF103091318900983B98 /* WheelAnything */,
+				0644BF1D3091318A00983B98 /* WheelAnythingTests */,
+				0644BF273091318A00983B98 /* WheelAnythingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0644BF0F3091318900983B98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		0644BF1C3091318A00983B98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		0644BF263091318A00983B98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0644BF0D3091318900983B98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		0644BF1A3091318A00983B98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		0644BF243091318A00983B98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0644BF203091318A00983B98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0644BF103091318900983B98 /* WheelAnything */;
+			targetProxy = 0644BF1F3091318A00983B98 /* PBXContainerItemProxy */;
+		};
+		0644BF2A3091318A00983B98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0644BF103091318900983B98 /* WheelAnything */;
+			targetProxy = 0644BF293091318A00983B98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0644BF2E3091318A00983B98 /* Debug configuration for PBXProject "WheelAnything" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0644BF2F3091318A00983B98 /* Release configuration for PBXProject "WheelAnything" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		0644BF313091318A00983B98 /* Debug configuration for PBXNativeTarget "WheelAnything" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshitpareek.WheelAnything;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		0644BF323091318A00983B98 /* Release configuration for PBXNativeTarget "WheelAnything" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshitpareek.WheelAnything;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		0644BF343091318A00983B98 /* Debug configuration for PBXNativeTarget "WheelAnythingTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshitpareek.WheelAnythingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheelAnything.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WheelAnything";
+			};
+			name = Debug;
+		};
+		0644BF353091318A00983B98 /* Release configuration for PBXNativeTarget "WheelAnythingTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshitpareek.WheelAnythingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WheelAnything.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WheelAnything";
+			};
+			name = Release;
+		};
+		0644BF373091318A00983B98 /* Debug configuration for PBXNativeTarget "WheelAnythingUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshitpareek.WheelAnythingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = WheelAnything;
+			};
+			name = Debug;
+		};
+		0644BF383091318A00983B98 /* Release configuration for PBXNativeTarget "WheelAnythingUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harshitpareek.WheelAnythingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_TARGET_NAME = WheelAnything;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0644BF0C3091318900983B98 /* Build configuration list for PBXProject "WheelAnything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0644BF2E3091318A00983B98 /* Debug configuration for PBXProject "WheelAnything" */,
+				0644BF2F3091318A00983B98 /* Release configuration for PBXProject "WheelAnything" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		0644BF303091318A00983B98 /* Build configuration list for PBXNativeTarget "WheelAnything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0644BF313091318A00983B98 /* Debug configuration for PBXNativeTarget "WheelAnything" */,
+				0644BF323091318A00983B98 /* Release configuration for PBXNativeTarget "WheelAnything" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		0644BF333091318A00983B98 /* Build configuration list for PBXNativeTarget "WheelAnythingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0644BF343091318A00983B98 /* Debug configuration for PBXNativeTarget "WheelAnythingTests" */,
+				0644BF353091318A00983B98 /* Release configuration for PBXNativeTarget "WheelAnythingTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		0644BF363091318A00983B98 /* Build configuration list for PBXNativeTarget "WheelAnythingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0644BF373091318A00983B98 /* Debug configuration for PBXNativeTarget "WheelAnythingUITests" */,
+				0644BF383091318A00983B98 /* Release configuration for PBXNativeTarget "WheelAnythingUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0644BF093091318900983B98 /* Project object */;
+	validationLevel = 1;
+}
