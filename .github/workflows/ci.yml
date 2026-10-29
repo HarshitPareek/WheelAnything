@@ -42,11 +42,11 @@ jobs:
           xcodebuild -version
 
       # Formatting check first: it takes seconds, so style problems fail fast.
+      # Lints every Swift file git tracks instead of a hand-written folder list:
+      # swift format exits 0 for a path that does not exist, so a typo in a list
+      # would silently skip files.
       - name: Check formatting
-        run: >
-          swift format lint --strict --recursive
-          WheelCore/Package.swift WheelCore/Sources WheelCore/Tests
-          WheelAnything/WheelAnything WheelAnything/WheelAnythingTests WheelAnything/WheelAnythingUITests
+        run: git ls-files -z '*.swift' | xargs -0 swift format lint --strict
 
       # WheelCore's tests need no app and no screen, so they are the tests CI runs.
       - name: Test WheelCore
