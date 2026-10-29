@@ -15,6 +15,7 @@ Do **Stage 1 only**: no conversion engines, no output pipeline, no StoreKit purc
 - **Spikes are deleted only when their real replacement lands.** Stage 1 replaces the panel, drop and hot-key spikes. Vision, PDF, StoreKit, folder-access, Downloads and Image I/O spikes stay until their stages. Their buttons move from the spike pill to a Debug-only "Spikes" submenu in the menu bar item.
 - **CI runs only tests that need no screen:** `swift test` in `WheelCore`. The app target is built in CI but its app-hosted unit tests and UI tests run only locally. This narrows `PLAN.md` §8.1 A2 ("runs all tests") on purpose, and is why app logic belongs in `WheelCore`.
 - **The user writes the deliberately failing test** in Part A; Claude reviews it.
+- **Before opening each PR, Claude runs the app-hosted unit tests and the UI tests locally** (the tests CI skips) and pastes the result into the PR description: passed and failed counts, and every failure with its message.
 
 ## Actions offered after a drop
 
@@ -30,7 +31,7 @@ The type is the **detected content type**, not the extension. "Own format" means
 
 Unsupported or unreadable files are listed with the reason and left out of the selection. If nothing supported remains, only the error is shown. Dropping never starts an action.
 
-## Choices Claude proposes (user to confirm)
+## Choices Claude proposed (accepted by the user, 2026-10-29)
 
 1. Pro actions show a "Pro" badge. In Stage 1, tapping any action (free or Pro) shows the Debug-only "not built yet" message; the paywall comes in Stage 5.
 2. In Release builds the Settings window shows only **Shortcut** and **Plan & About** (version and privacy statement) in Stage 1.
@@ -46,7 +47,7 @@ Unsupported or unreadable files are listed with the reason and left out of the s
    - run `swift test` in `WheelCore`,
    - run `swift format lint --strict` on all Swift files.
    Claude explains every line.
-3. Open PR 1 with `gh` and wait for CI to pass.
+3. Run the app-hosted unit tests and the UI tests locally, open PR 1 with `gh` with those results in the description, and wait for CI to pass.
 4. **The user writes the deliberately failing test:**
    - Where: `WheelCore/Tests/WheelCoreTests/ImageIOCapabilitiesTests.swift`, a new `@Test` in the existing struct.
    - What: build an `ImageIOCapabilities` by hand (not `.current()`), with PNG readable and nothing writable, then expect — wrongly, on purpose — that it can write PNG. The result must not depend on the Mac the test runs on.
