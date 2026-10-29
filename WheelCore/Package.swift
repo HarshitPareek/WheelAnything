@@ -9,7 +9,7 @@ let package = Package(
     // Matches the app's deployment target (PLAN.md §2).
     platforms: [.macOS(.v14)],
     products: [
-        .library(name: "WheelCore", targets: ["WheelCore"]),
+        .library(name: "WheelCore", targets: ["WheelCore"])
     ],
     targets: [
         .target(name: "WheelCore"),

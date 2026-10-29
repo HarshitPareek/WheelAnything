@@ -1,5 +1,6 @@
 import Testing
 import UniformTypeIdentifiers
+
 @testable import WheelCore
 
 struct ImageIOCapabilitiesTests {
