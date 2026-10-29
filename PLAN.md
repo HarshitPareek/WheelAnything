@@ -26,11 +26,11 @@ Version 1 handles **Images** and **PDFs**, plus two on-device AI tools: **backgr
 | Pro tier | AI tools, batch processing (the same action on many files), saved presets, advanced quality and metadata controls. |
 | Minimum macOS | 14.0 Sonoma. Required for Vision foreground masks and `@Observable`. |
 | Architectures | Universal binary (arm64 + x86_64). Intel testing stays outstanding until it is actually done. |
-| Tooling | Xcode 26.x. An Xcode app project plus a local Swift package (`WheelCore`) that holds all logic except UI glue. |
+| Tooling | Xcode 27.x (27.1 at Stage 0). An Xcode app project plus a local Swift package (`WheelCore`) that holds all logic except UI glue. |
 | App presence | No Dock icon (`LSUIElement`). A menu bar icon with: Open Wheel, Settings…, Quit. |
 | Default output | The user's Downloads folder, via the Downloads read-write sandbox entitlement. |
-| Optional output | "Save next to original" after the user grants access to that folder once. The grant is remembered with a security-scoped bookmark. |
-| Shortcut | User-configurable, with no hard-coded ⌥Space (it conflicts with Alfred, Raycast, ChatGPT, and typing a non-breaking space). First launch offers to set one. Registered with Carbon `RegisterEventHotKey`, which works in the sandbox without Accessibility permission (verify in Stage 0). |
+| Optional output | "Save next to original" after the user grants access to that folder once. The grant is remembered with a security-scoped bookmark. No app-scoped bookmark entitlement is needed (verified in Stage 0 on macOS 26; re-check on macOS 14). |
+| Shortcut | User-configurable, with no hard-coded ⌥Space (it conflicts with Alfred, Raycast, ChatGPT, and typing a non-breaking space). First launch offers to set one. First launch suggests ⌃⌥⌘W. Registered with Carbon `RegisterEventHotKey`, which works in the sandbox without Accessibility permission (verified in Stage 0). macOS does not report when another app or the system already uses a combination, so the Shortcut setting warns when the user picks a well-known system shortcut and explains that other apps' shortcuts cannot be detected. |
 | Wheel categories | v1 shows **Images** and **PDF** only. Unimplemented categories are **hidden**, not greyed out, because App Review rejects placeholder features. The wheel layout must support 2–6 slices so Video, Audio, Documents, and Archives can be added later. |
 | Privacy | No network use, analytics, or telemetry. App Store privacy label: "Data Not Collected". |
 
@@ -40,9 +40,9 @@ Version 1 handles **Images** and **PDFs**, plus two on-device AI tools: **backgr
 
 ### 3.1 Images (free)
 
-- Convert between PNG, JPEG, and HEIC/HEIF.
+- Convert between PNG, JPEG, and HEIC. HEIF (`public.heif`) is accepted as input only: Image I/O reads it but cannot write it (Stage 0).
 - Accept WebP as input if Image I/O reports it as a readable type at runtime.
-- No WebP output in v1 unless Image I/O reports WebP as a *writable* type on the running OS. Do not add libwebp in v1.
+- No WebP output in v1 unless Image I/O reports WebP as a *writable* type on the running OS. Do not add libwebp in v1. (Stage 0, macOS 26.6.2: WebP readable, not writable.)
 - Quality slider for JPEG and HEIC.
 - **Transparency:** preserve it where the output format supports it. When converting a transparent image to JPEG, show a warning and require an explicit background color choice (default white).
 - **Metadata:** preserve it by default. Offer "remove all metadata" and "remove location only".
@@ -325,11 +325,11 @@ Use small, deterministic fixture files committed to the repo. Do not rely only o
 
 ## 10. Open decisions (the user decides; the agent must not)
 
-- The default shortcut suggestion offered at first launch.
+- ~~The default shortcut suggestion offered at first launch.~~ Decided: ⌃⌥⌘W.
 - Whether free users get a few free AI uses to try the feature before buying.
 - The final price tier.
 - The app name: check the App Store and trademarks for "WheelAnything" before release.
-- **Public or private GitHub repository.**
+- ~~**Public or private GitHub repository.**~~ Decided: public.
   - Public: free CI, and the code is visible to internship reviewers.
   - Private: protects the code of a paid app, but CI uses limited free minutes.
   - Decide before Stage 0 step A1.
