@@ -1,5 +1,6 @@
 import Testing
 import UniformTypeIdentifiers
+
 @testable import WheelCore
 
 struct ImageIOCapabilitiesTests {
@@ -9,5 +10,13 @@ struct ImageIOCapabilitiesTests {
         let capabilities = ImageIOCapabilities.current()
         #expect(capabilities.canRead(.png))
         #expect(capabilities.canWrite(.png))
+    }
+
+    // Built by hand, so the result does not depend on the Mac running the test.
+    @Test func readableOnlyTypeIsNotWritable() {
+        let capabilities = ImageIOCapabilities(
+            readableTypeIdentifiers: [UTType.png.identifier], writableTypeIdentifiers: [])
+        #expect(capabilities.canRead(.png))
+        #expect(!capabilities.canWrite(.png))
     }
 }

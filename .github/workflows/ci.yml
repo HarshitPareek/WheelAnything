@@ -1,0 +1,62 @@
+# Continuous integration: GitHub builds and checks the project on every pull request
+# and on every push to main. A red result blocks merging once main is protected.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# If a newer commit arrives for the same branch or PR, cancel the older run.
+# macOS minutes are the expensive kind, so never pay for a run nobody needs.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    # GitHub's runner image with Xcode 27 (a public preview as of October 2026).
+    # The regular macos-26 image only has Xcode 26.
+    runs-on: xcode-27
+    # Stop a stuck run instead of burning minutes for the default 6 hours.
+    timeout-minutes: 30
+
+    steps:
+      # Download this repository's code onto the runner.
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # Use exactly the Xcode the project is developed with, so CI and the
+      # developer's Mac build the same way. Fail loudly if it is not installed.
+      - name: Select Xcode 27.1
+        run: |
+          set -euo pipefail
+          wanted=/Applications/Xcode_27.1.app
+          if [ ! -d "$wanted" ]; then
+            echo "::error::Xcode 27.1 is not installed on this runner (expected $wanted)."
+            echo "Installed Xcode versions:"
+            ls -d /Applications/Xcode*.app
+            exit 1
+          fi
+          sudo xcode-select --switch "$wanted/Contents/Developer"
+          xcodebuild -version
+
+      # Formatting check first: it takes seconds, so style problems fail fast.
+      # Lints every Swift file git tracks instead of a hand-written folder list:
+      # swift format exits 0 for a path that does not exist, so a typo in a list
+      # would silently skip files.
+      - name: Check formatting
+        run: git ls-files -z '*.swift' | xargs -0 swift format lint --strict
+
+      # WheelCore's tests need no app and no screen, so they are the tests CI runs.
+      - name: Test WheelCore
+        run: swift test --package-path WheelCore
+
+      # Compile the app and both test bundles without running them. App-hosted and
+      # UI tests need a screen and run locally before each PR instead.
+      - name: Build app and test bundles
+        run: >
+          xcodebuild build-for-testing
+          -project WheelAnything/WheelAnything.xcodeproj
+          -scheme WheelAnything
+          -destination 'platform=macOS'
