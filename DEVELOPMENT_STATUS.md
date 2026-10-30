@@ -15,7 +15,7 @@ Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done;
 ## Implemented but not tested
 
 - Panel repositioning when screens change (code present, never triggered).
-- UI test target (template only, never run).
+- UI test target: Xcode's template tests only (launch and launch performance). They run locally before each PR, not in CI.
 
 ## Not implemented
 
