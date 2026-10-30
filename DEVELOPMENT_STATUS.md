@@ -1,6 +1,6 @@
 # Development Status
 
-Last updated: 2026-10-29 · Current stage: **Stage 0 complete, waiting for go-ahead on Stage 1**
+Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done; Part B step 6, Entitlements)
 
 ## Implemented and tested
 
@@ -8,15 +8,19 @@ Last updated: 2026-10-29 · Current stage: **Stage 0 complete, waiting for go-ah
 - `WheelCore` package with `ImageIOCapabilities` (1 test).
 - Stage 0 feasibility spikes (Debug builds only) — results in `STAGE_0_REPORT.md`.
 - Local StoreKit configuration with the Pro non-consumable; shared scheme.
+- CI (`.github/workflows/ci.yml`, `xcode-27` runner, Xcode 27.1): `swift format lint --strict` on every tracked Swift file, `swift test` in WheelCore, `xcodebuild build-for-testing`. Seen red on a failing test and green after the fix.
+- `main` is protected: pull request required, `build-and-test` must pass, rules apply to admins; a direct push was rejected in a real test.
+- `Entitlements` protocol with the Stage 1 `FreeTierEntitlements` (never Pro), 1 test.
 
 ## Implemented but not tested
 
 - Panel repositioning when screens change (code present, never triggered).
-- UI test target (template only, never run).
+- UI test target: Xcode's template tests only (launch and launch performance). They run locally before each PR, not in CI.
 
 ## Not implemented
 
-- Everything in Stages 1–7: real pill/wheel UI, menu bar item, settings, file detection, conversion engines, output pipeline, Pro/entitlements, CI.
+- Rest of Stage 1 (`TASK_STAGE_1.md` steps 7–14): file detection, action availability, state machine, pill panel, wheel UI, menu bar item, shortcut, settings.
+- Stages 2–7: conversion engines, output pipeline, StoreKit purchases, batch, presets, release.
 
 ## Unverified assumptions
 
@@ -33,8 +37,11 @@ cd WheelAnything
 xcodebuild test -project WheelAnything.xcodeproj -scheme WheelAnything \
   -destination 'platform=macOS' -only-testing:WheelAnythingTests
 
-# WheelCore package
-cd WheelCore && swift test
+# WheelCore package (what CI runs)
+swift test --package-path WheelCore
+
+# Formatting check (what CI runs)
+git ls-files -z '*.swift' | xargs -0 swift format lint --strict
 
 # A headless spike (Debug build only)
 WheelAnything.app/Contents/MacOS/WheelAnything -spike imageio
