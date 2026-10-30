@@ -14,7 +14,7 @@ Do **Stage 1 only**: no conversion engines, no output pipeline, no StoreKit purc
 - **The chosen shortcut persists across relaunch** (stored in user defaults). An unreadable stored value is treated as "no shortcut set", logged, and shown as unset in Settings, never as a crash. The first-launch offer is shown once.
 - **Spikes are deleted only when their real replacement lands.** Stage 1 replaces the panel, drop and hot-key spikes. Vision, PDF, StoreKit, folder-access, Downloads and Image I/O spikes stay until their stages. Their buttons move from the spike pill to a Debug-only "Spikes" submenu in the menu bar item.
 - **CI runs only tests that need no screen:** `swift test` in `WheelCore`. The app target is built in CI but its app-hosted unit tests and UI tests run only locally. This narrows `PLAN.md` §8.1 A2 ("runs all tests") on purpose, and is why app logic belongs in `WheelCore`.
-- **The user writes the deliberately failing test** in Part A; Claude reviews it.
+- **Claude writes the deliberately failing test** in Part A (changed by the user on 2026-10-30; originally the user was to write it).
 - **Before opening each PR, Claude runs the app-hosted unit tests and the UI tests locally** (the tests CI skips) and pastes the result into the PR description: passed and failed counts, and every failure with its message.
 
 ## Actions offered after a drop
@@ -48,10 +48,10 @@ Unsupported or unreadable files are listed with the reason and left out of the s
    - run `swift format lint --strict` on all Swift files.
    Claude explains every line.
 3. Run the app-hosted unit tests and the UI tests locally, open PR 1 with `gh` with those results in the description, and wait for CI to pass.
-4. **The user writes the deliberately failing test:**
+4. **Claude writes the deliberately failing test:**
    - Where: `WheelCore/Tests/WheelCoreTests/ImageIOCapabilitiesTests.swift`, a new `@Test` in the existing struct.
    - What: build an `ImageIOCapabilities` by hand (not `.current()`), with PNG readable and nothing writable, then expect — wrongly, on purpose — that it can write PNG. The result must not depend on the Mac the test runs on.
-   - Run `swift test` locally to see it fail, commit, push, and watch CI turn red on the PR. Then fix the expectation so it states the true behavior, push, and watch CI turn green. Claude reviews both versions.
+   - Run `swift test` locally to see it fail, commit, push, and watch CI turn red on the PR. Then fix the expectation so it states the true behavior, push, and watch CI turn green.
 5. The user merges PR 1, then protects `main` in GitHub settings (step-by-step instructions from Claude): require a pull request and require the CI check to pass.
 
 ### Part B — UI shell (branches `stage-1/<topic>`, one PR each, merged by the user)
