@@ -11,4 +11,13 @@ struct ImageIOCapabilitiesTests {
         #expect(capabilities.canRead(.png))
         #expect(capabilities.canWrite(.png))
     }
+
+    // Built by hand, so the result does not depend on the Mac running the test.
+    @Test func readableOnlyTypeIsNotWritable() {
+        let capabilities = ImageIOCapabilities(
+            readableTypeIdentifiers: [UTType.png.identifier], writableTypeIdentifiers: [])
+        #expect(capabilities.canRead(.png))
+        // Deliberately wrong: PNG is not in the writable set. CI should turn red.
+        #expect(capabilities.canWrite(.png))
+    }
 }
