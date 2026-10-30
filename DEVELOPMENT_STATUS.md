@@ -11,7 +11,7 @@ Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done;
 - CI (`.github/workflows/ci.yml`, `xcode-27` runner, Xcode 27.1): `swift format lint --strict` on every tracked Swift file, `swift test` in WheelCore, `xcodebuild build-for-testing`. Seen red on a failing test and green after the fix.
 - `main` is protected: pull request required, `build-and-test` must pass, rules apply to admins; a direct push was rejected in a real test.
 - `Entitlements` protocol with the Stage 1 `FreeTierEntitlements` (never Pro), 1 test.
-- `FileDetector` (`WheelCore/FileDetection`): identifies PNG, JPEG, HEIC, HEIF, GIF, WebP and PDF by content, flags a wrong extension, rejects folders, empty files, damaged headers, damaged PDFs and unsupported types with a message. 12 tests on committed fixtures (`scripts/make-fixtures.swift`).
+- `FileDetector` (`WheelCore/FileDetection`): identifies PNG, JPEG, HEIC, HEIF, GIF, WebP and PDF by content, flags a wrong extension, rejects folders, empty files, damaged headers, damaged PDFs and unsupported types with a message. 10 test functions (13 cases) on committed fixtures (`scripts/make-fixtures.swift`).
 
 ## Implemented but not tested
 
