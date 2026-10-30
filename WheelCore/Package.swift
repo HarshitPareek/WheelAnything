@@ -13,6 +13,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "WheelCore"),
-        .testTarget(name: "WheelCoreTests", dependencies: ["WheelCore"]),
+        // Fixtures/ holds small sample files; .copy keeps the folder as-is in the test bundle.
+        .testTarget(name: "WheelCoreTests", dependencies: ["WheelCore"], resources: [.copy("Fixtures")]),
     ]
 )
