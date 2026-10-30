@@ -17,7 +17,6 @@ struct ImageIOCapabilitiesTests {
         let capabilities = ImageIOCapabilities(
             readableTypeIdentifiers: [UTType.png.identifier], writableTypeIdentifiers: [])
         #expect(capabilities.canRead(.png))
-        // Deliberately wrong: PNG is not in the writable set. CI should turn red.
-        #expect(capabilities.canWrite(.png))
+        #expect(!capabilities.canWrite(.png))
     }
 }
