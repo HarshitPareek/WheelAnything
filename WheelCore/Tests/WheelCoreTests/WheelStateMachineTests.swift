@@ -35,10 +35,10 @@ struct WheelStateMachineTests {
         #expect(next(.expanded, .pillClicked) == .idle)
     }
 
-    @Test func hotKeyOnlyOpens() {
-        #expect(next(.idle, .hotKeyPressed) == .expanded)
-        #expect(next(.expanded, .hotKeyPressed) == .expanded)
-        #expect(next(.filesSelected(Self.onePNG), .hotKeyPressed) == .filesSelected(Self.onePNG))
+    @Test func openRequestOnlyOpens() {
+        #expect(next(.idle, .openRequested) == .expanded)
+        #expect(next(.expanded, .openRequested) == .expanded)
+        #expect(next(.filesSelected(Self.onePNG), .openRequested) == .filesSelected(Self.onePNG))
     }
 
     @Test(arguments: notRunning)
@@ -133,7 +133,7 @@ struct WheelStateMachineTests {
     @Test(arguments: running)
     func runningJobIgnoresClosingAndNewDrops(state: WheelState) {
         for event: WheelEvent in [
-            .clickedOutside, .pillClicked, .escapePressed, .hotKeyPressed, .filesDropped(Self.onePNG),
+            .clickedOutside, .pillClicked, .escapePressed, .openRequested, .filesDropped(Self.onePNG),
         ] {
             #expect(next(state, event) == state)
         }

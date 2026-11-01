@@ -68,7 +68,8 @@ public enum WheelState: Equatable, Sendable {
 /// Something that happened to the wheel.
 public enum WheelEvent: Equatable, Sendable {
     case pillClicked
-    case hotKeyPressed
+    /// The hot key or the menu's "Open Wheel": opens the wheel, never closes it.
+    case openRequested
     case escapePressed
     case clickedOutside
     case filesDropped(FileSelection)
@@ -102,7 +103,7 @@ public struct WheelStateMachine: Sendable {
             return nextWhileRunning(state, on: event)
         }
         switch (state, event) {
-        case (.idle, .pillClicked), (.idle, .hotKeyPressed):
+        case (.idle, .pillClicked), (.idle, .openRequested):
             return .expanded
         case (_, .pillClicked), (_, .clickedOutside):
             return .idle
