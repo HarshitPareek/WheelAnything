@@ -1,6 +1,6 @@
 # Development Status
 
-Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done; Part B steps 6–8 done)
+Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done; Part B steps 6–9 done)
 
 ## Implemented and tested
 
@@ -13,6 +13,7 @@ Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done;
 - `Entitlements` protocol with the Stage 1 `FreeTierEntitlements` (never Pro), 1 test.
 - `FileDetector` (`WheelCore/FileDetection`): identifies PNG, JPEG, HEIC, HEIF, GIF, WebP and PDF by content, flags a wrong extension, rejects folders, empty files, damaged headers, damaged PDFs and unsupported types with a message. 10 test functions (13 cases) on committed fixtures (`scripts/make-fixtures.swift`).
 - `ActionCatalog` (`WheelCore/Actions`): which actions the wheel offers for the dropped files, free vs Pro (batch), locked via `Entitlements`. 11 test functions (14 cases).
+- `WheelStateMachine` (`WheelCore/Wheel`): the eight wheel states and PLAN.md §4 interaction rules as one pure transition function; a drop never starts a job, a running job can't be closed, locked or unoffered actions never start. 22 test functions.
 
 ## Implemented but not tested
 
@@ -21,7 +22,7 @@ Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done;
 
 ## Not implemented
 
-- Rest of Stage 1 (`TASK_STAGE_1.md` steps 9–14): state machine, pill panel, wheel UI, menu bar item, shortcut, settings.
+- Rest of Stage 1 (`TASK_STAGE_1.md` steps 10–14): pill panel, wheel UI, menu bar item, shortcut, settings.
 - Stages 2–7: conversion engines, output pipeline, StoreKit purchases, batch, presets, release.
 
 ## Known limitations
