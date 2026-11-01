@@ -27,3 +27,6 @@ build/
 # Provisioning profiles.
 *.mobileprovision
 *.provisionprofile
+
+# --- Claude Code personal settings (permission rules etc.) ---
+.claude/settings.local.json
