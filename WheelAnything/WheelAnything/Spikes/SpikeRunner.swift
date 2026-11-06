@@ -5,8 +5,8 @@
     ///
     /// Usage from Terminal (the sandbox still applies when the binary is run directly):
     ///   WheelAnything.app/Contents/MacOS/WheelAnything -spike imageio
-    /// Without `-spike`, this returns and the app starts normally with the interactive
-    /// pill panel spike (see `SpikeAppDelegate`).
+    /// Without `-spike`, this returns and the app starts normally. The interactive spikes
+    /// (folder access, StoreKit) are in the menu bar item's Debug-only Spikes menu.
     enum SpikeRunner {
         static func runHeadlessSpikeIfRequested() {
             let args = CommandLine.arguments
