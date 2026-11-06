@@ -1,6 +1,6 @@
 # Development Status
 
-Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done; Part B steps 6–10 and 12 done, manual check pending)
+Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done; Part B steps 6–12 done; 13–14 left)
 
 ## Implemented and tested
 
@@ -15,6 +15,7 @@ Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done;
 - `ActionCatalog` (`WheelCore/Actions`): which actions the wheel offers for the dropped files, free vs Pro (batch), locked via `Entitlements`. 11 test functions (14 cases).
 - `WheelStateMachine` (`WheelCore/Wheel`): the eight wheel states and PLAN.md §4 interaction rules as one pure transition function; a drop never starts a job, a running job can't be closed, locked or unoffered actions never start. 22 test functions.
 - Pill panel (`WheelCore/Panel`, `WheelCore/UI/Wheel/PillView.swift`): non-activating, all Spaces, above full-screen apps, below menu bar and notch, sized exactly to the pill (48×32 measured), repositions on screen changes; click toggles, Escape and click outside close, drops go through `FileDetector` into the state machine. `WheelModel` connects UI and state machine. Placement tested for notched, non-notched, hidden menu bar and offset displays.
+- Wheel UI (`WheelCore/UI/Wheel`): half-wheel of 2–6 round slices whose radius grows with the count so slices never overlap (`WheelLayout`, tested); Images and PDF categories open a file chooser; action slices per the agreed table with Pro lock badges; notes for rejected files, misleading extensions and "not built yet"; job, success, failure and cancelled views. Reduce Motion (fade instead of spring), Reduce Transparency (solid black), Increase Contrast (stronger edges). Release builds hide unbuilt actions and contain no "not built yet" text.
 - Menu bar item (app target): Open Wheel, Quit; Debug-only Settings… placeholder and Spikes submenu (folder access, bookmark, StoreKit). The template window is gone.
 
 ## Implemented but not tested
@@ -24,11 +25,13 @@ Last updated: 2026-10-30 · Current stage: **Stage 1 in progress** (Part A done;
 
 ## Not implemented
 
-- Rest of Stage 1 (`TASK_STAGE_1.md` steps 11, 13, 14): wheel UI (half-wheel of actions), shortcut service (the Stage 0 hot-key spike still provides ⌃⌥⌘W in Debug builds), settings.
+- Rest of Stage 1 (`TASK_STAGE_1.md` steps 13, 14): shortcut service (the Stage 0 hot-key spike still provides ⌃⌥⌘W in Debug builds), settings.
 - Stages 2–7: conversion engines, output pipeline, StoreKit purchases, batch, presets, release.
 
 ## Known limitations
 
+- Job, success, failure and cancelled views can't be reached in the app until Stage 2 engines exist; they were checked only as offscreen renders (ImageRenderer), not live.
+- While the wheel is open, the panel's bounding box includes transparent corners around the half-disc; whether those pass clicks through to other apps is unverified.
 - File detection does not catch an image cut off after its header (Image I/O reads pixels lazily); such files fail during conversion (Stage 2).
 - File detection has no manual drag-and-drop run yet; that comes with the wheel UI (step 11).
 

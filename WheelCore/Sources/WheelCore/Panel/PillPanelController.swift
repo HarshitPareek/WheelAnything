@@ -13,7 +13,10 @@ public final class PillPanelController: NSObject {
     public init(model: WheelModel) {
         self.model = model
         super.init()
-        let content = PillView(model: model) { [weak self] size in self?.resize(to: size) }
+        let content = WheelView(
+            model: model,
+            onChooseFiles: { [weak self] category in self?.chooseFiles(in: category) },
+            onSizeChange: { [weak self] size in self?.resize(to: size) })
         let hostingView = NSHostingView(rootView: content)
         panel.contentView = hostingView
         panel.setContentSize(hostingView.fittingSize)
@@ -35,6 +38,22 @@ public final class PillPanelController: NSObject {
             MainActor.assumeIsolated { self?.clickedOutside() }
         }
         observeState()
+    }
+
+    /// Lets the user pick files of one category. Files picked in the open panel are granted to
+    /// the sandboxed app, like dropped files, and go through the same detection.
+    private func chooseFiles(in category: WheelCategory) {
+        let openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = true
+        openPanel.canChooseDirectories = false
+        openPanel.allowedContentTypes = category.contentTypes
+        openPanel.prompt = "Choose"
+        // An agent app is not frontmost on its own; without this the open panel can appear
+        // behind other windows.
+        NSApp.activate()
+        guard openPanel.runModal() == .OK else { return }
+        let urls = openPanel.urls
+        Task { await model.drop(urls) }
     }
 
     private func clickedOutside() {
