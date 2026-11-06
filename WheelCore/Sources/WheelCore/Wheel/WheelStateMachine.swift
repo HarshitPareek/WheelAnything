@@ -94,6 +94,12 @@ public struct WheelStateMachine: Sendable {
         self.catalog = catalog
     }
 
+    /// Starts in a given state; used by tests and previews of states no engine can reach yet.
+    init(catalog: ActionCatalog, state: WheelState) {
+        self.catalog = catalog
+        self.state = state
+    }
+
     public mutating func handle(_ event: WheelEvent) {
         state = Self.next(after: state, on: event, catalog: catalog)
     }
